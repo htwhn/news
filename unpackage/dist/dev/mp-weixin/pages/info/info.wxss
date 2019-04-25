@@ -1,0 +1,8 @@
+
+.title{
+	font-weight: bold;
+}
+rich-text{
+	margin: 3rpx;
+}
+

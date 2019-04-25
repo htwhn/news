@@ -1,1 +1,1 @@
-<view bind:__l="__l"><view class="uni-list"></view></view>
+<view bind:__l="__l"><view class="title">{{''+newsDetail.title+''}}</view><rich-text nodes="{{Strings}}"></rich-text></view>

@@ -22,6 +22,10 @@
 			};
 		},
 		onLoad:function(){
+			uni.showLoading({
+				title: '正在加载...',
+				mask: false
+			})
 			uni.request({
 				method:'GET',
 				url:'https://unidemo.dcloud.net.cn/api/news',
@@ -29,6 +33,7 @@
 				success: res =>{
 					console.log(res);
 					this.news = res.data;
+					uni.hideLoading();
 				},
 				fail: ()=>{},
 				complete: () => {

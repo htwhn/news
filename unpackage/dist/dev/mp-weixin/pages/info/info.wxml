@@ -1,1 +1,1 @@
-<view bind:__l="__l"><view class="title">{{''+newsDetail.title+''}}</view><rich-text nodes="{{Strings}}"></rich-text></view>
+<view class="content" bind:__l="__l"><view class="title">{{newsDetail.title}}</view><view class="art-content"><rich-text nodes="{{Strings}}"></rich-text></view></view>

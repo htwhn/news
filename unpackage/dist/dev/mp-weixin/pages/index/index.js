@@ -122,6 +122,10 @@ var _default =
 
   },
   onLoad: function onLoad() {var _this = this;
+    uni.showLoading({
+      title: '正在加载...',
+      mask: false });
+
     uni.request({
       method: 'GET',
       url: 'https://unidemo.dcloud.net.cn/api/news',
@@ -129,6 +133,7 @@ var _default =
       success: function success(res) {
         console.log(res);
         _this.news = res.data;
+        uni.hideLoading();
       },
       fail: function fail() {},
       complete: function complete() {

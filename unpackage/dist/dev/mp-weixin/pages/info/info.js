@@ -111,6 +111,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 var _default =
 {
   data: function data() {
@@ -120,6 +122,10 @@ var _default =
 
   },
   onLoad: function onLoad(e) {var _this = this;
+    uni.showLoading({
+      title: '正在加载...',
+      mask: false });
+
     var newsid = e.newsid;
     console.log(newsid);
     uni.request({
@@ -130,6 +136,7 @@ var _default =
         console.log(res);
         _this.newsDetail = res.data;
         _this.Strings = res.data.content;
+        uni.hideLoading();
       },
       fail: function fail() {},
       complete: function complete() {} });

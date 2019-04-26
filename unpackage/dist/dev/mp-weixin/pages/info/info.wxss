@@ -1,8 +1,9 @@
 
 .title{
-	font-weight: bold;
+	font-size: 40rpx;
 }
-rich-text{
-	margin: 3rpx;
+.content{
+	padding: 10rpx;
 }
+
 

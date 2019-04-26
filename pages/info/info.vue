@@ -1,11 +1,13 @@
 <template>
-<view>
-		<view class="title">
-			{{newsDetail.title}}
+<view class="content">
+		<view class="title" v-text="newsDetail.title"> <!-- 不要使用差值表达式，网络原因 -->
 		</view>
-		<rich-text :nodes="Strings">
-			
-		</rich-text>
+		<view class="art-content">
+			<rich-text :nodes="Strings" >
+				
+			</rich-text>
+		</view>
+		
 		
 	
 </view>
@@ -20,6 +22,10 @@ export default {
 		}
 	},
 	onLoad:function(e){
+		uni.showLoading({
+			title: '正在加载...',
+			mask: false
+		});
 		var newsid = e.newsid;
 		console.log(newsid);
 		uni.request({
@@ -30,6 +36,7 @@ export default {
 				console.log(res);
 				this.newsDetail = res.data;
 				this.Strings = res.data.content;
+				uni.hideLoading();
 			},
 			fail: () => {},
 			complete: () => {}
@@ -44,9 +51,10 @@ export default {
 
 <style>
 .title{
-	font-weight: bold;
+	font-size: 40upx;
 }
-rich-text{
-	margin: 3upx;
+.content{
+	padding: 10upx;
 }
+
 </style>

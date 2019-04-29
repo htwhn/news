@@ -1,0 +1,2 @@
+setCssToHead([".",[1],"title{ font-size: ",[0,40],"; }\n.",[1],"content{ padding: ",[0,10],"; }\n",],undefined,{path:"./pages/info/info.wxss"})();
+document.dispatchEvent(new CustomEvent("generateFuncReady", { detail: { generateFunc: $gwx('./pages/info/info.wxml') } }));
